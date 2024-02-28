@@ -25,7 +25,7 @@ public class EnemySpawner : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <=0) {
                 Vector3 enemyPos = new Vector3(Random.Range(-4f, 4f), transform.position.y, transform.position.z);
-                carNum = Random.Range (0,5);
+                carNum = Random.Range (0, 20);
                 Instantiate (cars[carNum], enemyPos, transform.rotation);
                 timer = delayTimer;
         }
