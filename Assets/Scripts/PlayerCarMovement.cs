@@ -24,4 +24,15 @@ public class PlayerCarMovement : MonoBehaviour
 
         transform.position = position;
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+    if (collision.gameObject.CompareTag("Enemy"))
+    {
+        // Handle what happens when the player's car collides with an enemy
+        Destroy(gameObject);
+    }
+    }
+
+
 }
