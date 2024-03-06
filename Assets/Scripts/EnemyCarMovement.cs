@@ -13,14 +13,10 @@ public class EnemyCarMovement : MonoBehaviour
     }
 
     public SpeedInterval[] speedIntervals;
-    public float initialSpeed; // Set an initial speed in case there are no intervals
-
     private float currentSpeed;
 
     void Start()
     {
-        currentSpeed = initialSpeed;  // Default to the initial speed
-
         // Find the initial speed interval if any are defined
         if (speedIntervals.Length > 0) 
         {

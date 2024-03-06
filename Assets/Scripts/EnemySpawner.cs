@@ -9,9 +9,9 @@ public class EnemySpawner : MonoBehaviour
 
     public List<float> lanePositions = new List<float>() { -4.2f, -1.45f, 1.45f, 4.2f }; 
 
-    public float delayTimer = 0.5f;
+    public float delayTimer = 1f;
     float timer;
-    float powerUpChance = 0.2f;
+    float powerUpChance = 0.1f;
 
     void Start()
     {
@@ -25,14 +25,14 @@ public class EnemySpawner : MonoBehaviour
         {
             if (Random.value < powerUpChance) { 
                 // Spawn power-up
-                int laneIndex = Random.Range(0, 3);
+                int laneIndex = Random.Range(0, 11);
                 Vector3 powerUpPos = new Vector3(lanePositions[laneIndex], transform.position.y, transform.position.z);
                 Instantiate(powerUpPrefab, powerUpPos, transform.rotation);  
             } else {
                 // Spawn regular enemy car
-                int laneIndex = Random.Range(0, 3); // Adjust as needed
+                int laneIndex = Random.Range(0, 11); // Adjust as needed
                 Vector3 enemyPos = new Vector3(lanePositions[laneIndex], transform.position.y, transform.position.z);
-                int carNum = Random.Range(0, 20); // Adjust as needed
+                int carNum = Random.Range(0, 19); // Adjust as needed
                 Instantiate(cars[carNum], enemyPos, transform.rotation);
             }
 

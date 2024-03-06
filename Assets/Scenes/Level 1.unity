@@ -304,12 +304,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!1 &602786684
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,14 +344,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedIntervals:
   - startTime: 0
-    endTime: 5
+    endTime: 20
     speed: 0.5
-  - startTime: 5
-    endTime: 10
+  - startTime: 20
+    endTime: 40
     speed: 1
-  - startTime: 10
-    endTime: 1000
+  - startTime: 40
+    endTime: 60
     speed: 1.5
+  - startTime: 60
+    endTime: 80
+    speed: 2
+  - startTime: 80
+    endTime: 1000
+    speed: 2.5
 --- !u!64 &602786686
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -483,11 +489,19 @@ MonoBehaviour:
   - {fileID: 4171510031441796264, guid: 6c10f0b5ac2e7464abff668233dd7636, type: 3}
   powerUpPrefab: {fileID: 3043999216614618518, guid: e8bdc18ff67fa004ca9dd208d4691b45, type: 3}
   lanePositions:
+  - -4.5
   - -4.2
+  - -3.65
+  - -2.05
   - -1.45
+  - -0.75
+  - 0.75
   - 1.45
+  - 2.05
+  - 3.65
   - 4.2
-  delayTimer: 2
+  - 4.5
+  delayTimer: 0.5
 --- !u!4 &1203771738
 Transform:
   m_ObjectHideFlags: 0
@@ -671,6 +685,18 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7416814038114414938, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416814038114414938, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416814038114414938, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416814038114414938, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -733,6 +759,70 @@ PrefabInstance:
     - target: {fileID: 7416814038114414941, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
       propertyPath: invulnerabilityDuration
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416814038114414941, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: speedIntervals.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416814038114414941, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: speedIntervals.Array.data[0].speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416814038114414941, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: speedIntervals.Array.data[1].speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416814038114414941, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: speedIntervals.Array.data[2].speed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416814038114414941, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: speedIntervals.Array.data[3].speed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416814038114414941, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: speedIntervals.Array.data[4].speed
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416814038114414941, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: speedIntervals.Array.data[0].endTime
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416814038114414941, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: speedIntervals.Array.data[1].endTime
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416814038114414941, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: speedIntervals.Array.data[2].endTime
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416814038114414941, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: speedIntervals.Array.data[3].endTime
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416814038114414941, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: speedIntervals.Array.data[4].endTime
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416814038114414941, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: speedIntervals.Array.data[0].startTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416814038114414941, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: speedIntervals.Array.data[1].startTime
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416814038114414941, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: speedIntervals.Array.data[2].startTime
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416814038114414941, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: speedIntervals.Array.data[3].startTime
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416814038114414941, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: speedIntervals.Array.data[4].startTime
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 7416814038114414942, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
       propertyPath: maxHealth
