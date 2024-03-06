@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class TrackMovement : MonoBehaviour
 {
-    public float speed; // Adjust the speed of the movement
+    [System.Serializable] // Make the struct visible in the inspector
+    public struct SpeedInterval
+    {
+        public float startTime;
+        public float endTime;
+        public float speed;
+    }
+
+    public SpeedInterval[] speedIntervals; // Expose this to the Inspector
+
     Vector2 offset;
 
     void Update()
     {
-        // Calculate the vertical offset based on time and speed
-        offset = new Vector2(0, Time.time * speed);
+        float currentTime = Time.time;
 
-        // Apply the offset to the material's texture
-        GetComponent<Renderer>().material.mainTextureOffset = offset;
+        // Find the correct speed interval
+        for (int i = 0; i < speedIntervals.Length; i++)
+        {
+            if (currentTime >= speedIntervals[i].startTime && currentTime <= speedIntervals[i].endTime)
+            {
+                // Calculate offset based on the current speed
+                offset = new Vector2(0, currentTime * speedIntervals[i].speed);
+                GetComponent<Renderer>().material.mainTextureOffset = offset;
+                break; // Exit the loop once we've found the interval
+            }
+        }
     }
 }

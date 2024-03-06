@@ -7,21 +7,24 @@ public class EnemyDestroyer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-    if (collision.gameObject.CompareTag("Enemy"))
-    {
-        // Handle what happens when the player's car collides with an enemy
-        Destroy(collision.gameObject);
-    }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(collision.gameObject); // Destroy enemy
+        }
+        else if (collision.gameObject.CompareTag("PowerUp")) 
+        {
+            Destroy(collision.gameObject); // Destroy powerup
+        }
     }
 }
