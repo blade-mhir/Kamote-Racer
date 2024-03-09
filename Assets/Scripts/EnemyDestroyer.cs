@@ -22,7 +22,7 @@ public class EnemyDestroyer : MonoBehaviour
         {
             Destroy(collision.gameObject); // Destroy enemy
         }
-        else if (collision.gameObject.CompareTag("PowerUp")) 
+        else if (collision.gameObject.CompareTag("TurboPowerUp")) 
         {
             Destroy(collision.gameObject); // Destroy powerup
         }

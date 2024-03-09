@@ -25,6 +25,23 @@ public class PlayerCarMovement : MonoBehaviour
     public GameObject explosionEffectPrefab;
     public GameObject respawnEffectPrefab;
 
+//TURBO BOOST PU
+    [Header("Turbo Boost")]
+    public int pUNeededForTurbo = 3; 
+    public float turboBoostDuration = 5f;
+    public float turboBoostSpeedMultiplier = 2f; 
+
+    private int powerUpsCollected = 0; 
+    private bool isTurboActive = false;
+    private float originalSpeed; 
+
+//HEALTH PU
+    [Header("Health Power-Up")]
+    public int pUNeededForHealth = 1; // You can set to 1 for immediate effect
+    public int replenishableLives = 3; // Replenishable lives for the car
+    private int healthPowerUpsCollected = 0; 
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -38,7 +55,12 @@ public class PlayerCarMovement : MonoBehaviour
 
     void Update()
     {
-        // Find the correct speed interval
+        if (isTurboActive) 
+        {
+            currentSpeed = originalSpeed * turboBoostSpeedMultiplier;
+        }
+        else
+        {
         for (int i = 0; i < speedIntervals.Length; i++)
         {
             if (Time.time >= speedIntervals[i].startTime && Time.time <= speedIntervals[i].endTime)
@@ -47,7 +69,8 @@ public class PlayerCarMovement : MonoBehaviour
                 break; 
             }
         }
-
+        }
+        // Find the correct speed interval
         float horizontalInput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(horizontalInput * currentSpeed, 0f); 
 
@@ -57,11 +80,31 @@ public class PlayerCarMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("PowerUp"))
+        
+       if (collision.gameObject.CompareTag("TurboPowerUp"))
         {
-            // Handle what happens when the player's car collides with a Power Up
-            // ... 
+            powerUpsCollected++;
+
+            if (powerUpsCollected >= pUNeededForTurbo)
+            {
+                powerUpsCollected = 0; // Reset the counter
+                ActivateTurboBoost();
+            }
+            // Destroy the power-up GameObject
+            Destroy(collision.gameObject); 
         }
+        else if (collision.gameObject.CompareTag("HealthPowerUp"))
+        {
+            healthPowerUpsCollected++;
+
+            if (healthPowerUpsCollected >= pUNeededForHealth)
+            {
+                healthPowerUpsCollected = 0; // Reset the counter
+                ReplenishLife();
+            }
+
+            Destroy(collision.gameObject); 
+        } 
         else if (collision.gameObject.CompareTag("Enemy"))
         {
             livesRemaining--;
@@ -106,7 +149,6 @@ public class PlayerCarMovement : MonoBehaviour
         gameObject.SetActive(true); 
     }
 
-
     IEnumerator InvulnerabilityPeriod()
     {
         // Make car temporarily invulnerable (e.g., by disabling its collider)
@@ -116,5 +158,27 @@ public class PlayerCarMovement : MonoBehaviour
 
         // Re-enable the collider
         GetComponent<Collider2D>().enabled = true; 
+    }
+
+    void ActivateTurboBoost()
+    {
+        isTurboActive = true;
+        originalSpeed = currentSpeed; // Store the speed before the boost 
+        StartCoroutine(TurboBoostTimer());
+    }
+
+    IEnumerator TurboBoostTimer() 
+    {
+        yield return new WaitForSeconds(turboBoostDuration);
+        isTurboActive = false; 
+    }
+
+    void ReplenishLife()
+    {
+        if (livesRemaining < replenishableLives) {
+            livesRemaining++;
+            Debug.Log("Life Replenished!");
+            // You might want to add visual or sound effects here
+        } 
     }
 }
