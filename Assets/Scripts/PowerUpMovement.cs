@@ -52,4 +52,9 @@ public class PowerUpMovement : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void UpdateSpeedForTimeWarp(float slowdownFactor)
+    {
+    currentSpeed *= slowdownFactor;
+    }
 }

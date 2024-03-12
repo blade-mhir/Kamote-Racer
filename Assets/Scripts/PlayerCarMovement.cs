@@ -41,6 +41,21 @@ public class PlayerCarMovement : MonoBehaviour
     public int maxLives = 3; // Maximum lives for the car
     private int healthPowerUpsCollected = 0; 
 
+// TIME WARP POWER-UP
+    [Header("Time Warp")]
+    public int powerUpsNeededForTimeWarp = 3; 
+    public float timeWarpDuration = 5f;
+    public float timeWarpSlowdownFactor = 0.5f;
+
+    private int timeWarpPowerUpsCollected = 0; 
+    private bool isTimeWarpActive = false;
+
+    // References to other scripts
+    public TrackMovement trackMovement;
+    public EnemyCarMovement[] enemyMovements; // Array for multiple enemies
+    public PowerUpMovement[] powerUpMovements; // Array for multiple power-ups
+
+
 
     void Start()
     {
@@ -80,8 +95,19 @@ public class PlayerCarMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        
-       if (collision.gameObject.CompareTag("TurboPowerUp"))
+        if (collision.gameObject.CompareTag("TimeWarpPowerUp"))
+        {
+            timeWarpPowerUpsCollected++;
+
+            if (timeWarpPowerUpsCollected >= powerUpsNeededForTimeWarp)
+            {
+                timeWarpPowerUpsCollected = 0; 
+                ActivateTimeWarp();
+            }
+
+            Destroy(collision.gameObject); 
+        }
+       else if (collision.gameObject.CompareTag("TurboPowerUp"))
         {
             powerUpsCollected++;
 
@@ -180,5 +206,35 @@ public class PlayerCarMovement : MonoBehaviour
             Debug.Log("Life Replenished!");
             // You might want to add visual or sound effects here
         } 
+    }
+
+    void ActivateTimeWarp()
+    {
+        isTimeWarpActive = true;
+        Time.timeScale = timeWarpSlowdownFactor;
+        // Slowdown Track (Remember to adjust the TrackMovement script)
+
+        // Slowdown Enemies
+        foreach (EnemyCarMovement enemyMovement in enemyMovements) 
+        {
+            enemyMovement.UpdateSpeedForTimeWarp(timeWarpSlowdownFactor);
+        }
+
+        // Slowdown Power-ups
+        foreach (PowerUpMovement powerUpMovement in powerUpMovements)
+        {
+            powerUpMovement.UpdateSpeedForTimeWarp(timeWarpSlowdownFactor);
+        }
+
+        StartCoroutine(TimeWarpTimer()); 
+    }
+
+    IEnumerator TimeWarpTimer() 
+    {
+        yield return new WaitForSeconds(timeWarpDuration);
+        Time.timeScale = 1.0f;
+        // Reset Speeds (Modify movement scripts here too)
+
+        isTimeWarpActive = false; 
     }
 }

@@ -43,4 +43,9 @@ public class EnemyCarMovement : MonoBehaviour
             }
         }
     }
+
+    public void UpdateSpeedForTimeWarp(float slowdownFactor)
+    {
+    currentSpeed *= slowdownFactor;
+    }
 }

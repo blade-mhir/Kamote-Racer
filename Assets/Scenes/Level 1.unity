@@ -489,11 +489,11 @@ MonoBehaviour:
   - {fileID: 4171510031441796264, guid: 6c10f0b5ac2e7464abff668233dd7636, type: 3}
   powerUpPrefabs:
   - prefab: {fileID: 1761304643532203140, guid: 29c61fc3722d33d4f8220a356b3b3e46, type: 3}
-    spawnChance: 0.2
+    spawnChance: 0.1
   - prefab: {fileID: 3333907773908137258, guid: 365dfb13fe5e17141aa0f1407bc81cd2, type: 3}
-    spawnChance: 0.2
-  - prefab: {fileID: 3590090427450642979, guid: 3e9bc008693cab24a818074648dc24ae, type: 3}
-    spawnChance: 0.2
+    spawnChance: 0.1
+  - prefab: {fileID: 3759179352254135202, guid: aa425afa3f3a23340ade39662ab8c276, type: 3}
+    spawnChance: 0.1
   lanePositions:
   - -4.5
   - -4.2
@@ -623,17 +623,129 @@ PrefabInstance:
       value: Player Car
       objectReference: {fileID: 0}
     - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: trackMovement
+      value: 
+      objectReference: {fileID: 602786685}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
       propertyPath: powerUpsNeededForTurbo
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: timeWarpSlowdownFactor
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
       propertyPath: invulnerabilityDuration
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: enemyMovements.Array.size
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: powerUpsNeededForTimeWarp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: powerUpMovements.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
       propertyPath: turboBoostConfig.boostSpeed
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: enemyMovements.Array.data[0]
+      value: 
+      objectReference: {fileID: 2469352859314710144, guid: 9e1777bf88992ba4ca5ce9312b28024f, type: 3}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: enemyMovements.Array.data[1]
+      value: 
+      objectReference: {fileID: 8644336326908310073, guid: 15587b5083cb70041aa3df906df7f014, type: 3}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: enemyMovements.Array.data[2]
+      value: 
+      objectReference: {fileID: 8152903648843103664, guid: a5f81a8b27244464ea283c45dda8cb9e, type: 3}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: enemyMovements.Array.data[3]
+      value: 
+      objectReference: {fileID: 7994350150056686575, guid: 5092f7f75f84c2142b6a0f6b205693ec, type: 3}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: enemyMovements.Array.data[4]
+      value: 
+      objectReference: {fileID: 6738981166728906644, guid: d5b273619e9ff85478c2ded70e5da490, type: 3}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: enemyMovements.Array.data[5]
+      value: 
+      objectReference: {fileID: 8843267039914505952, guid: 0ba968d72505e7e48a52af52366c39ef, type: 3}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: enemyMovements.Array.data[6]
+      value: 
+      objectReference: {fileID: 5640017120300013783, guid: 5839192e68e05fd419e6b9b51fd045d2, type: 3}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: enemyMovements.Array.data[7]
+      value: 
+      objectReference: {fileID: 414740185386875243, guid: 82a15c315ad2d6f43ac41acee9856543, type: 3}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: enemyMovements.Array.data[8]
+      value: 
+      objectReference: {fileID: 2011310430224568192, guid: 6e2dc2cb53e76904192b626c9bacaca4, type: 3}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: enemyMovements.Array.data[9]
+      value: 
+      objectReference: {fileID: 2495182256671034238, guid: 1e11e053035c8f946a6c5f267c2d8d8d, type: 3}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: enemyMovements.Array.data[10]
+      value: 
+      objectReference: {fileID: 4283804973425844607, guid: 59d26637be5b56641addd38eb00b7e8e, type: 3}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: enemyMovements.Array.data[11]
+      value: 
+      objectReference: {fileID: 7472850762521706261, guid: f077656b166715e429b0b09c787770e3, type: 3}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: enemyMovements.Array.data[12]
+      value: 
+      objectReference: {fileID: 2561820196063911974, guid: 3ecd5745b836aee4cabbb369826e6a92, type: 3}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: enemyMovements.Array.data[13]
+      value: 
+      objectReference: {fileID: 1349997798103141812, guid: b9d2111a4519a7844a0180e6c4f018b4, type: 3}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: enemyMovements.Array.data[14]
+      value: 
+      objectReference: {fileID: 656637635375677922, guid: c6c2acbdf675ade4584475c0c7e6176b, type: 3}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: enemyMovements.Array.data[15]
+      value: 
+      objectReference: {fileID: 1783738860200431558, guid: 757f7a6a74bea4449a494f26a2fea1f4, type: 3}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: enemyMovements.Array.data[16]
+      value: 
+      objectReference: {fileID: 8866005173772575655, guid: 6fbd74b51bdc83e449abb2198a4e03f3, type: 3}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: enemyMovements.Array.data[17]
+      value: 
+      objectReference: {fileID: 6767229343677785214, guid: c6d54bfe4d56eb74d9639f22a6f5b916, type: 3}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: enemyMovements.Array.data[18]
+      value: 
+      objectReference: {fileID: 784211695537989816, guid: ad09df51cc03e5e48b3b050425cb0652, type: 3}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: enemyMovements.Array.data[19]
+      value: 
+      objectReference: {fileID: 3575502115356594110, guid: 6c10f0b5ac2e7464abff668233dd7636, type: 3}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: powerUpMovements.Array.data[0]
+      value: 
+      objectReference: {fileID: 142815792439296560, guid: 29c61fc3722d33d4f8220a356b3b3e46, type: 3}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: powerUpMovements.Array.data[1]
+      value: 
+      objectReference: {fileID: 3333907773908137259, guid: 365dfb13fe5e17141aa0f1407bc81cd2, type: 3}
+    - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
+      propertyPath: powerUpMovements.Array.data[2]
+      value: 
+      objectReference: {fileID: 3759179352254135203, guid: aa425afa3f3a23340ade39662ab8c276, type: 3}
     - target: {fileID: 3772716889973231276, guid: c5f7d935a681c294fb2a58e77963891b, type: 3}
       propertyPath: turboBoostConfig.powerUpsNeeded
       value: 1
