@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - TurboPowerUp
   - HealthPowerUp
+  - TimeWarpPowerUp
+  - PowerUp
   layers:
   - Default
   - TransparentFX

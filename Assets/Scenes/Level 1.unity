@@ -491,7 +491,9 @@ MonoBehaviour:
   - prefab: {fileID: 1761304643532203140, guid: 29c61fc3722d33d4f8220a356b3b3e46, type: 3}
     spawnChance: 0.2
   - prefab: {fileID: 3333907773908137258, guid: 365dfb13fe5e17141aa0f1407bc81cd2, type: 3}
-    spawnChance: 0.1
+    spawnChance: 0.2
+  - prefab: {fileID: 3590090427450642979, guid: 3e9bc008693cab24a818074648dc24ae, type: 3}
+    spawnChance: 0.2
   lanePositions:
   - -4.5
   - -4.2

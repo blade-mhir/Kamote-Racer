@@ -27,7 +27,7 @@ public class PlayerCarMovement : MonoBehaviour
 
 //TURBO BOOST PU
     [Header("Turbo Boost")]
-    public int pUNeededForTurbo = 3; 
+    public int powerUpsNeededForTurbo = 3; 
     public float turboBoostDuration = 5f;
     public float turboBoostSpeedMultiplier = 2f; 
 
@@ -37,8 +37,8 @@ public class PlayerCarMovement : MonoBehaviour
 
 //HEALTH PU
     [Header("Health Power-Up")]
-    public int pUNeededForHealth = 1; // You can set to 1 for immediate effect
-    public int replenishableLives = 3; // Replenishable lives for the car
+    public int powerUpsNeededForHealth = 1; // You can set to 1 for immediate effect
+    public int maxLives = 3; // Maximum lives for the car
     private int healthPowerUpsCollected = 0; 
 
 
@@ -85,7 +85,7 @@ public class PlayerCarMovement : MonoBehaviour
         {
             powerUpsCollected++;
 
-            if (powerUpsCollected >= pUNeededForTurbo)
+            if (powerUpsCollected >= powerUpsNeededForTurbo)
             {
                 powerUpsCollected = 0; // Reset the counter
                 ActivateTurboBoost();
@@ -97,7 +97,7 @@ public class PlayerCarMovement : MonoBehaviour
         {
             healthPowerUpsCollected++;
 
-            if (healthPowerUpsCollected >= pUNeededForHealth)
+            if (healthPowerUpsCollected >= powerUpsNeededForHealth)
             {
                 healthPowerUpsCollected = 0; // Reset the counter
                 ReplenishLife();
@@ -111,7 +111,7 @@ public class PlayerCarMovement : MonoBehaviour
 
             if (livesRemaining > 0)
             {
-                Respawn();  
+                Respawn();  
                 StartCoroutine(InvulnerabilityPeriod());
             }
             else 
@@ -175,7 +175,7 @@ public class PlayerCarMovement : MonoBehaviour
 
     void ReplenishLife()
     {
-        if (livesRemaining < replenishableLives) {
+        if (livesRemaining < maxLives) {
             livesRemaining++;
             Debug.Log("Life Replenished!");
             // You might want to add visual or sound effects here
