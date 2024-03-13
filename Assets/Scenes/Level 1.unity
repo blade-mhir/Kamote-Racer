@@ -696,6 +696,18 @@ PrefabInstance:
       propertyPath: jetFighterYOffset
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
+      propertyPath: respawnPosition.z
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
+      propertyPath: respawnEffectPrefab
+      value: 
+      objectReference: {fileID: 8914470733967012170, guid: 0455f95e784bfaf42be770b20e91510d, type: 3}
+    - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
+      propertyPath: invulnerabilityDuration
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4405980676207911739, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
       propertyPath: m_Name
       value: Player Car
