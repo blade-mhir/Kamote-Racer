@@ -344,20 +344,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedIntervals:
   - startTime: 0
-    endTime: 20
+    endTime: 10
     speed: 0.5
+  - startTime: 10
+    endTime: 20
+    speed: 0.6
   - startTime: 20
+    endTime: 30
+    speed: 0.7
+  - startTime: 30
     endTime: 40
-    speed: 1
+    speed: 0.8
   - startTime: 40
-    endTime: 60
-    speed: 1.5
-  - startTime: 60
-    endTime: 80
-    speed: 2
-  - startTime: 80
+    endTime: 50
+    speed: 0.9
+  - startTime: 50
     endTime: 1000
-    speed: 2.5
+    speed: 1
 --- !u!64 &602786686
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -493,22 +496,22 @@ MonoBehaviour:
   - prefab: {fileID: 3333907773908137258, guid: 365dfb13fe5e17141aa0f1407bc81cd2, type: 3}
     spawnChance: 0.1
   - prefab: {fileID: 3759179352254135202, guid: aa425afa3f3a23340ade39662ab8c276, type: 3}
-    spawnChance: 0.1
+    spawnChance: 0.05
   - prefab: {fileID: 4714903553608970868, guid: dcbaf3ed474547d4bb8b0cfb81e577ea, type: 3}
-    spawnChance: 0.1
+    spawnChance: 0.05
   lanePositions:
-  - -4.5
-  - -4.2
-  - -3.65
-  - -2.05
-  - -1.45
-  - -0.75
-  - 0.75
-  - 1.45
-  - 2.05
-  - 3.65
-  - 4.2
-  - 4.5
+  - -4.9
+  - -4.07
+  - -3.24
+  - -2.33
+  - -1.43
+  - -0.51
+  - 0.45
+  - 1.407
+  - 2.36
+  - 3.26
+  - 4.112
+  - 4.95
   delayTimer: 0.5
 --- !u!4 &1203771738
 Transform:
@@ -685,28 +688,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
-      propertyPath: originalCarY
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
       propertyPath: trackMovement
       value: 
       objectReference: {fileID: 602786685}
     - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
-      propertyPath: jetFighterYOffset
-      value: 0.6
+      propertyPath: timeWarpDuration
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
-      propertyPath: respawnPosition.z
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
-      propertyPath: respawnEffectPrefab
-      value: 
-      objectReference: {fileID: 8914470733967012170, guid: 0455f95e784bfaf42be770b20e91510d, type: 3}
-    - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
-      propertyPath: invulnerabilityDuration
-      value: 1
+      propertyPath: turboBoostDuration
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4405980676207911739, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
       propertyPath: m_Name
@@ -718,7 +709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4405980676207911742, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.027
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 4405980676207911742, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
       propertyPath: m_LocalPosition.y

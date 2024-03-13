@@ -100,23 +100,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedIntervals:
   - startTime: 0
-    endTime: 20
+    endTime: 10
     speed: 7
+  - startTime: 10
+    endTime: 20
+    speed: 9
   - startTime: 20
+    endTime: 30
+    speed: 11
+  - startTime: 30
     endTime: 40
-    speed: 12
+    speed: 13
   - startTime: 40
-    endTime: 60
-    speed: 17
-  - startTime: 60
-    endTime: 80
-    speed: 22
-  - startTime: 80
-    endTime: 100
-    speed: 27
-  - startTime: 100
+    endTime: 50
+    speed: 15
+  - startTime: 50
     endTime: 1000
-    speed: 32
+    speed: 17
 --- !u!61 &3317842380473009553
 BoxCollider2D:
   m_ObjectHideFlags: 0

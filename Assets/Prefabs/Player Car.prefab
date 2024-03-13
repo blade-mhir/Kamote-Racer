@@ -148,27 +148,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedIntervals:
   - startTime: 0
-    endTime: 20
-    speed: 7
-  - startTime: 20
-    endTime: 40
-    speed: 7
-  - startTime: 40
-    endTime: 60
-    speed: 7
-  - startTime: 60
-    endTime: 80
-    speed: 7
-  - startTime: 80
-    endTime: 100
-    speed: 7
-  - startTime: 100
     endTime: 1000
     speed: 7
-  minX: -4.5
-  maxX: 4.5
-  respawnPosition: {x: -0.027, y: -3.85, z: 0}
-  invulnerabilityDuration: 2
+  minX: -4.9
+  maxX: 4.98
+  respawnPosition: {x: -0.027, y: -3.85, z: -2}
+  invulnerabilityDuration: 1
   livesRemaining: 3
   explosionEffectPrefab: {fileID: 139366, guid: 9dcd845a27d2ed048a71955448b5c3aa, type: 3}
   respawnEffectPrefab: {fileID: 8914470733967012170, guid: 0455f95e784bfaf42be770b20e91510d, type: 3}
@@ -177,9 +162,9 @@ MonoBehaviour:
   turboBoostSpeedMultiplier: 2
   powerUpsNeededForHealth: 1
   maxLives: 3
-  powerUpsNeededForTimeWarp: 1
+  powerUpsNeededForTimeWarp: 2
   timeWarpDuration: 5
-  timeWarpSlowdownFactor: 0.25
+  timeWarpSlowdownFactor: 0.5
   trackMovement: {fileID: 0}
   enemyMovements:
   - {fileID: 2469352859314710144, guid: 9e1777bf88992ba4ca5ce9312b28024f, type: 3}
@@ -206,8 +191,7 @@ MonoBehaviour:
   - {fileID: 142815792439296560, guid: 29c61fc3722d33d4f8220a356b3b3e46, type: 3}
   - {fileID: 3333907773908137259, guid: 365dfb13fe5e17141aa0f1407bc81cd2, type: 3}
   - {fileID: 3759179352254135203, guid: aa425afa3f3a23340ade39662ab8c276, type: 3}
-  jetFighterPowerUpsNeeded: 1
+  - {fileID: 4714903553608970869, guid: dcbaf3ed474547d4bb8b0cfb81e577ea, type: 3}
+  jetFighterPowerUpsNeeded: 3
   jetFighterPrefab: {fileID: 1131970379797220709, guid: f268215938942104392d0926acb23ee9, type: 3}
-  jetFighterFinalPosition: {x: 0, y: 0, z: 0}
   jetFighterYOffset: 0.6
-  originalCarY: 1

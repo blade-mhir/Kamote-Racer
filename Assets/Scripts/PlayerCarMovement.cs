@@ -56,7 +56,9 @@ public class PlayerCarMovement : MonoBehaviour
     public PowerUpMovement[] powerUpMovements; // Array for multiple power-ups
 
     [Header("Jet Fighter Power-Up")]
-    public int jetFighterPowerUpsNeeded = 5; 
+    public int jetFighterPowerUpsNeeded = 3; 
+    private int jetFighterPowerUpsCollected = 0; 
+
 
     void Start()
     {
@@ -108,19 +110,21 @@ public class PlayerCarMovement : MonoBehaviour
 
             Destroy(collision.gameObject); 
         }
-         else if (collision.gameObject.CompareTag("JetFighterPowerUp"))
-        {
-        jetFighterPowerUpsNeeded++; // Corrected variable name
+        else if (collision.gameObject.CompareTag("JetFighterPowerUp"))
+        {
+            Debug.Log("Collided with Jet Fighter power-up!"); 
+            jetFighterPowerUpsCollected++; 
+            Debug.Log("jetFighterPowerUpsCollected: " + jetFighterPowerUpsCollected); // Changed to the correct variable
+            if (jetFighterPowerUpsCollected >= jetFighterPowerUpsNeeded) 
+            {
+                Debug.Log("Ready to activate Jet Fighter!");
+                jetFighterPowerUpsCollected = 0; // Reset the counter
+                StartCoroutine(ActivateJetFighter()); 
+            }
 
-        if (jetFighterPowerUpsNeeded >= jetFighterPowerUpsNeeded) // Double check
-        {
-            jetFighterPowerUpsNeeded = 0; // Reset the counter
-            StartCoroutine(ActivateJetFighter()); 
-        }
-
-        Destroy(collision.gameObject); 
-        }
-       else if (collision.gameObject.CompareTag("TurboPowerUp"))
+            Destroy(collision.gameObject); 
+        }
+        else if (collision.gameObject.CompareTag("TurboPowerUp"))
         {
             powerUpsCollected++;
 
@@ -218,7 +222,7 @@ public class PlayerCarMovement : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = Vector2.zero; // Reset any existing velocity
         GetComponent<Rigidbody2D>().isKinematic = true;  // Make the car non-reactive to physics
 
-        yield return new WaitForSeconds(2f); // Wait for 1 second
+        yield return new WaitForSeconds(1f); // Wait for 1 second
 
         // 4. Re-enable player movement and physics interaction
         GetComponent<Rigidbody2D>().isKinematic = false;
