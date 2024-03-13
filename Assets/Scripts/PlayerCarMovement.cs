@@ -55,7 +55,8 @@ public class PlayerCarMovement : MonoBehaviour
     public EnemyCarMovement[] enemyMovements; // Array for multiple enemies
     public PowerUpMovement[] powerUpMovements; // Array for multiple power-ups
 
-
+    [Header("Jet Fighter Power-Up")]
+    public int jetFighterPowerUpsNeeded = 5; 
 
     void Start()
     {
@@ -107,6 +108,18 @@ public class PlayerCarMovement : MonoBehaviour
 
             Destroy(collision.gameObject); 
         }
+         else if (collision.gameObject.CompareTag("JetFighterPowerUp"))
+        {
+        jetFighterPowerUpsNeeded++; // Corrected variable name
+
+        if (jetFighterPowerUpsNeeded >= jetFighterPowerUpsNeeded) // Double check
+        {
+            jetFighterPowerUpsNeeded = 0; // Reset the counter
+            StartCoroutine(ActivateJetFighter()); 
+        }
+
+        Destroy(collision.gameObject); 
+        }
        else if (collision.gameObject.CompareTag("TurboPowerUp"))
         {
             powerUpsCollected++;
@@ -139,6 +152,30 @@ public class PlayerCarMovement : MonoBehaviour
             {
                 Respawn();  
                 StartCoroutine(InvulnerabilityPeriod());
+
+                // Cancel power-ups on enemy collision:
+                if (isTurboActive) 
+                {
+                    isTurboActive = false;
+                    // You might want to  add a visual/audio effect here 
+                }
+                if (isTimeWarpActive) 
+                {
+                    isTimeWarpActive = false;
+                    Time.timeScale = 1.0f; // Reset time scale
+
+                    // Reset Enemy Speeds
+                    foreach (EnemyCarMovement enemyMovement in enemyMovements) 
+                    {
+                        enemyMovement.ResetSpeedFromTimeWarp(); 
+                    }
+
+                    // Reset Power-Up Speeds
+                    foreach (PowerUpMovement powerUpMovement in powerUpMovements)
+                    {
+                        powerUpMovement.ResetSpeedFromTimeWarp();
+                    }
+                }
             }
             else 
             {
@@ -237,4 +274,31 @@ public class PlayerCarMovement : MonoBehaviour
 
         isTimeWarpActive = false; 
     }
+    
+    public GameObject jetFighterPrefab;
+    private GameObject jetFighterInstance;
+    private JetFighterMovement jetFighterMovementScript;
+    public float jetFighterYOffset = 2.0f; 
+    public float originalCarY; 
+    public const float PERMANENT_Y_OFFSET = -3f; 
+
+    IEnumerator ActivateJetFighter()
+    {
+
+        originalCarY = transform.position.y; // Store player car's y
+
+        yield return new WaitForSeconds(0.01f); 
+
+        gameObject.SetActive(false);
+
+        // Calculate jet fighter position without directly using the car's position
+        Vector3 jetFighterPosition = new Vector3(transform.position.x, originalCarY + jetFighterYOffset, transform.position.z);
+
+        jetFighterInstance = Instantiate(jetFighterPrefab, jetFighterPosition, transform.rotation);
+        jetFighterMovementScript = jetFighterInstance.GetComponent<JetFighterMovement>();
+        jetFighterMovementScript.playerCarMovement = this; 
+
+        jetFighterMovementScript.StartFighterTimer(); 
+    }
+
 }

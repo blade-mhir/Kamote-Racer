@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3772716889973231273
+--- !u!1 &4405980676207911739
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,11 +8,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3772716889973231279}
-  - component: {fileID: 3772716889973231278}
-  - component: {fileID: 3772716889973231266}
-  - component: {fileID: 3772716889973231277}
-  - component: {fileID: 3772716889973231276}
+  - component: {fileID: 4405980676207911742}
+  - component: {fileID: 4405980676207911743}
+  - component: {fileID: 4405980676207911736}
+  - component: {fileID: 4405980676207911737}
+  - component: {fileID: 4405980676207911738}
   m_Layer: 0
   m_Name: Player Car
   m_TagString: Player
@@ -20,13 +20,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3772716889973231279
+--- !u!4 &4405980676207911742
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3772716889973231273}
+  m_GameObject: {fileID: 4405980676207911739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -3.52, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
@@ -35,13 +35,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3772716889973231278
+--- !u!212 &4405980676207911743
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3772716889973231273}
+  m_GameObject: {fileID: 4405980676207911739}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -87,14 +87,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &3772716889973231266
+--- !u!50 &4405980676207911736
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3772716889973231273}
+  m_GameObject: {fileID: 4405980676207911739}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -108,13 +108,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &3772716889973231277
+--- !u!61 &4405980676207911737
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3772716889973231273}
+  m_GameObject: {fileID: 4405980676207911739}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -134,13 +134,13 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7601275, y: 4.0377016}
   m_EdgeRadius: 0
---- !u!114 &3772716889973231276
+--- !u!114 &4405980676207911738
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3772716889973231273}
+  m_GameObject: {fileID: 4405980676207911739}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 747c2ee4ea88b244390a2cd195423511, type: 3}
@@ -167,8 +167,47 @@ MonoBehaviour:
     speed: 7
   minX: -4.5
   maxX: 4.5
-  respawnPosition: {x: 0, y: -3.52, z: 0}
-  invulnerabilityDuration: 1
+  respawnPosition: {x: -0.027, y: -3.85, z: 0}
+  invulnerabilityDuration: 2
   livesRemaining: 3
   explosionEffectPrefab: {fileID: 139366, guid: 9dcd845a27d2ed048a71955448b5c3aa, type: 3}
   respawnEffectPrefab: {fileID: 8914470733967012170, guid: 0455f95e784bfaf42be770b20e91510d, type: 3}
+  powerUpsNeededForTurbo: 2
+  turboBoostDuration: 5
+  turboBoostSpeedMultiplier: 2
+  powerUpsNeededForHealth: 1
+  maxLives: 3
+  powerUpsNeededForTimeWarp: 1
+  timeWarpDuration: 5
+  timeWarpSlowdownFactor: 0.25
+  trackMovement: {fileID: 0}
+  enemyMovements:
+  - {fileID: 2469352859314710144, guid: 9e1777bf88992ba4ca5ce9312b28024f, type: 3}
+  - {fileID: 8644336326908310073, guid: 15587b5083cb70041aa3df906df7f014, type: 3}
+  - {fileID: 8152903648843103664, guid: a5f81a8b27244464ea283c45dda8cb9e, type: 3}
+  - {fileID: 7994350150056686575, guid: 5092f7f75f84c2142b6a0f6b205693ec, type: 3}
+  - {fileID: 6738981166728906644, guid: d5b273619e9ff85478c2ded70e5da490, type: 3}
+  - {fileID: 8843267039914505952, guid: 0ba968d72505e7e48a52af52366c39ef, type: 3}
+  - {fileID: 5640017120300013783, guid: 5839192e68e05fd419e6b9b51fd045d2, type: 3}
+  - {fileID: 414740185386875243, guid: 82a15c315ad2d6f43ac41acee9856543, type: 3}
+  - {fileID: 2011310430224568192, guid: 6e2dc2cb53e76904192b626c9bacaca4, type: 3}
+  - {fileID: 2495182256671034238, guid: 1e11e053035c8f946a6c5f267c2d8d8d, type: 3}
+  - {fileID: 4283804973425844607, guid: 59d26637be5b56641addd38eb00b7e8e, type: 3}
+  - {fileID: 7472850762521706261, guid: f077656b166715e429b0b09c787770e3, type: 3}
+  - {fileID: 2561820196063911974, guid: 3ecd5745b836aee4cabbb369826e6a92, type: 3}
+  - {fileID: 1349997798103141812, guid: b9d2111a4519a7844a0180e6c4f018b4, type: 3}
+  - {fileID: 656637635375677922, guid: c6c2acbdf675ade4584475c0c7e6176b, type: 3}
+  - {fileID: 1783738860200431558, guid: 757f7a6a74bea4449a494f26a2fea1f4, type: 3}
+  - {fileID: 8866005173772575655, guid: 6fbd74b51bdc83e449abb2198a4e03f3, type: 3}
+  - {fileID: 6767229343677785214, guid: c6d54bfe4d56eb74d9639f22a6f5b916, type: 3}
+  - {fileID: 784211695537989816, guid: ad09df51cc03e5e48b3b050425cb0652, type: 3}
+  - {fileID: 3575502115356594110, guid: 6c10f0b5ac2e7464abff668233dd7636, type: 3}
+  powerUpMovements:
+  - {fileID: 142815792439296560, guid: 29c61fc3722d33d4f8220a356b3b3e46, type: 3}
+  - {fileID: 3333907773908137259, guid: 365dfb13fe5e17141aa0f1407bc81cd2, type: 3}
+  - {fileID: 3759179352254135203, guid: aa425afa3f3a23340ade39662ab8c276, type: 3}
+  jetFighterPowerUpsNeeded: 1
+  jetFighterPrefab: {fileID: 1131970379797220709, guid: f268215938942104392d0926acb23ee9, type: 3}
+  jetFighterFinalPosition: {x: 0, y: 0, z: 0}
+  jetFighterYOffset: 0.6
+  originalCarY: 1

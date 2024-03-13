@@ -57,4 +57,10 @@ public class PowerUpMovement : MonoBehaviour
     {
     currentSpeed *= slowdownFactor;
     }
+
+    public void ResetSpeedFromTimeWarp()
+    {
+    currentSpeed = speedIntervals[0].speed; // Reset to initial speed (might need to adjust this)
+    }
+
 }

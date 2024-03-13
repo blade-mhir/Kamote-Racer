@@ -9,6 +9,8 @@ TagManager:
   - HealthPowerUp
   - TimeWarpPowerUp
   - PowerUp
+  - JetFighterPowerUp
+  - JetFighter
   layers:
   - Default
   - TransparentFX
