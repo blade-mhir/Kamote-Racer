@@ -152,7 +152,7 @@ MonoBehaviour:
     speed: 7
   minX: -4.9
   maxX: 4.98
-  respawnPosition: {x: -0.027, y: -3.85, z: 0}
+  respawnPosition: {x: -0.027, y: -3.85, z: -1}
   invulnerabilityDuration: 1
   livesRemaining: 3
   gameOverMenu: {fileID: 0}
@@ -162,7 +162,7 @@ MonoBehaviour:
   turboBoostDuration: 5
   turboBoostSpeedMultiplier: 2
   powerUpsNeededForHealth: 1
-  maxLives: 3
+  maxLives: 5
   powerUpsNeededForTimeWarp: 2
   timeWarpDuration: 5
   timeWarpSlowdownFactor: 0.5
