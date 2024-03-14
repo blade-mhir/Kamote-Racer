@@ -152,9 +152,10 @@ MonoBehaviour:
     speed: 7
   minX: -4.9
   maxX: 4.98
-  respawnPosition: {x: -0.027, y: -3.85, z: -2}
+  respawnPosition: {x: -0.027, y: -3.85, z: 0}
   invulnerabilityDuration: 1
   livesRemaining: 3
+  gameOverMenu: {fileID: 0}
   explosionEffectPrefab: {fileID: 139366, guid: 9dcd845a27d2ed048a71955448b5c3aa, type: 3}
   respawnEffectPrefab: {fileID: 8914470733967012170, guid: 0455f95e784bfaf42be770b20e91510d, type: 3}
   powerUpsNeededForTurbo: 2
@@ -193,5 +194,6 @@ MonoBehaviour:
   - {fileID: 3759179352254135203, guid: aa425afa3f3a23340ade39662ab8c276, type: 3}
   - {fileID: 4714903553608970869, guid: dcbaf3ed474547d4bb8b0cfb81e577ea, type: 3}
   jetFighterPowerUpsNeeded: 3
+  scoreManager: {fileID: 0}
   jetFighterPrefab: {fileID: 1131970379797220709, guid: f268215938942104392d0926acb23ee9, type: 3}
   jetFighterYOffset: 0.6

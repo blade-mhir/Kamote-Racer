@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1131970379797220709}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: -3.2, z: 0}
+  m_LocalPosition: {x: -0.03, y: -3.2, z: 2}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -122,5 +122,5 @@ MonoBehaviour:
   jetFighterSpeed: 10
   minX: -4.17
   maxX: 4.24
-  jetFighterDuration: 5
+  jetFighterDuration: 20
   playerCarMovement: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}

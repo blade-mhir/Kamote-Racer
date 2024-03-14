@@ -5,7 +5,7 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    private int currentScore;
+    public int currentScore;
     public TextMeshProUGUI scoreText;
 
     void Start() {
@@ -20,7 +20,7 @@ public class ScoreManager : MonoBehaviour
 
     private void UpdateScoreDisplay() {
         if (scoreText != null) {
-            scoreText.text = "Score: " + currentScore.ToString();
+            scoreText.text = currentScore.ToString();
         }
     }
 }

@@ -20,9 +20,15 @@ public class PlayerCarMovement : MonoBehaviour
     public float invulnerabilityDuration = 1f;
 
     private Rigidbody2D rb;
-    [SerializeField] private int livesRemaining = 3;
-    private float currentSpeed; 
+    [SerializeField] public int livesRemaining = 3;
+ public int GetLivesRemaining() 
+    {
+        return livesRemaining; 
+    }
 
+public GameOverMenu gameOverMenu;
+
+    private float currentSpeed; 
     public GameObject explosionEffectPrefab;
     public GameObject respawnEffectPrefab;
 
@@ -191,15 +197,7 @@ public class PlayerCarMovement : MonoBehaviour
             }
             else 
             {
-                if (explosionEffectPrefab != null) 
-                {
-                    GameObject explosionInstance = Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);
-                    Destroy(explosionInstance, 0.5f); // Adjust the delay '2f' as needed
-                }
-                gameObject.SetActive(false);
-                // Game Over! 
-                Debug.Log("Game Over"); 
-                // You'll likely want to disable the player car or handle game over logic here
+               StartCoroutine(GameOverSequence()); 
             }
         }
     }
@@ -326,5 +324,30 @@ public class PlayerCarMovement : MonoBehaviour
 
         jetFighterMovementScript.StartFighterTimer(); 
     }
+
+    IEnumerator GameOverSequence() 
+    {
+        if (explosionEffectPrefab != null)
+        {
+            GameObject explosionInstance = Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);
+            Destroy(explosionInstance, 0.5f);  // Adjust the delay  as needed
+        }
+
+        GetComponent<Rigidbody2D>().isKinematic = true;
+        GetComponent<SpriteRenderer>().enabled = false; 
+
+        yield return new WaitForSeconds(0.5f); // Wait for explosion to play 
+
+        // Execute Game Over Logic
+        if (gameOverMenu != null) 
+        {
+            gameOverMenu.ShowGameOver();
+        }
+        else 
+        {
+            Debug.LogError("GameOverMenu reference is missing!");
+        }
+    }
+
 
 }
