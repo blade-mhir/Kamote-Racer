@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro; 
 
 public class PlayerCarMovement : MonoBehaviour
 {
@@ -59,6 +60,8 @@ public class PlayerCarMovement : MonoBehaviour
     public int jetFighterPowerUpsNeeded = 3; 
     private int jetFighterPowerUpsCollected = 0; 
 
+    public ScoreManager scoreManager;
+    private float timeSurvived = 0f;
 
     void Start()
     {
@@ -94,6 +97,11 @@ public class PlayerCarMovement : MonoBehaviour
 
         float clampedX = Mathf.Clamp(transform.position.x, minX, maxX);
         transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
+
+        timeSurvived += Time.deltaTime; 
+        int score = (int)timeSurvived * 10; 
+        scoreManager.UpdateScore(score); 
+
     }
 
     void OnCollisionEnter2D(Collision2D collision)
