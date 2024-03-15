@@ -122,5 +122,5 @@ MonoBehaviour:
   jetFighterSpeed: 10
   minX: -4.17
   maxX: 4.24
-  jetFighterDuration: 20
+  jetFighterDuration: 10
   playerCarMovement: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}

@@ -42,6 +42,7 @@ public class JetFighterMovement : MonoBehaviour
             Vector3 carPosition = new Vector3(transform.position.x, transform.position.y + PlayerCarMovement.PERMANENT_Y_OFFSET + playerCarMovement.jetFighterYOffset, transform.position.z); 
             // Force Y-position to -3.85
             playerCarMovement.transform.position = new Vector3(carPosition.x, -3.85f, carPosition.z);
+            playerCarMovement.StartScoring(); // Resume scoring!
         }   
         Destroy(gameObject); 
     }

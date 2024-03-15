@@ -9,10 +9,20 @@ public class GameOverMenu : MonoBehaviour
     public ScoreManager scoreManager; 
     public GameObject pauseMenu;
 
+    public AudioManager audioManager;
+    public AudioSource gameOverMusicSource; 
+
     void Start()
     {
         gameOverMenu.SetActive(false); // Deactivate on start
         Time.timeScale = 1f; // Ensure normal time speed
+
+        // Initialize the AudioSource if necessary
+        if (gameOverMusicSource == null) 
+        {
+            gameOverMusicSource = gameObject.AddComponent<AudioSource>(); 
+            gameOverMusicSource.loop = true; // Make it loop
+        }
     }
 
     public void ShowGameOver()
@@ -27,6 +37,14 @@ public class GameOverMenu : MonoBehaviour
 
         GameManager.isGameOver = true;
         pauseMenu.SetActive(false);
+
+         if (audioManager != null)
+        {
+        audioManager.PauseMusic();
+        }
+
+         // Start game over music 
+        gameOverMusicSource.Play();
     }
     public void RestartGame()
     {

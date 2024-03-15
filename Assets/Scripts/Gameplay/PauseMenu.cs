@@ -5,6 +5,8 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu; // The UI for the pause menu
     private bool isPaused = false;
+    public AudioManager audioManager;
+
 
     void Start()
     {
@@ -31,6 +33,10 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false); 
         Time.timeScale = 1f; // Resume normal time speed
         isPaused = false;
+         if (audioManager != null)
+        {
+        audioManager.ResumeMusic();
+        }
     }
 
     void Pause()
@@ -38,6 +44,11 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0f; // Freeze time
         isPaused = true;
+
+        if (audioManager != null) 
+        {
+            audioManager.PauseMusic();
+        }
     }
 
     public void LoadMainMenu()
