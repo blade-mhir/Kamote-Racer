@@ -2471,13 +2471,11 @@ MonoBehaviour:
   - {fileID: 4171510031441796264, guid: 6c10f0b5ac2e7464abff668233dd7636, type: 3}
   powerUpPrefabs:
   - prefab: {fileID: 1761304643532203140, guid: 29c61fc3722d33d4f8220a356b3b3e46, type: 3}
-    spawnChance: 0.05
+    spawnChance: 1
   - prefab: {fileID: 3333907773908137258, guid: 365dfb13fe5e17141aa0f1407bc81cd2, type: 3}
-    spawnChance: 0.1
+    spawnChance: 0
   - prefab: {fileID: 3759179352254135202, guid: aa425afa3f3a23340ade39662ab8c276, type: 3}
     spawnChance: 0
-  - prefab: {fileID: 4714903553608970868, guid: dcbaf3ed474547d4bb8b0cfb81e577ea, type: 3}
-    spawnChance: 1
   lanePositions:
   - -4.9
   - -4.07
@@ -2491,7 +2489,7 @@ MonoBehaviour:
   - 3.26
   - 4.112
   - 4.95
-  delayTimer: 0.3
+  delayTimer: 0.5
 --- !u!4 &1203771738
 Transform:
   m_ObjectHideFlags: 0
@@ -4738,10 +4736,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turboCounterText: {fileID: 1785532179}
   timeWarpCounterText: {fileID: 752042960}
-  jetFighterCounterText: {fileID: 1648469232}
   turboActivatedText: {fileID: 1024527091}
   timeWarpActivatedText: {fileID: 1548390364}
-  jetFighterActivatedText: {fileID: 370259533}
 --- !u!1 &2146754771
 GameObject:
   m_ObjectHideFlags: 0
@@ -4826,25 +4822,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
-      propertyPath: maxLives
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
-      propertyPath: pauseMenu
-      value: 
-      objectReference: {fileID: 2086278279}
-    - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
-      propertyPath: healthAudio
-      value: 
-      objectReference: {fileID: 1401108500}
-    - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
       propertyPath: gameOverMenu
       value: 
       objectReference: {fileID: 2086278283}
-    - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
-      propertyPath: powerUpAudio
-      value: 
-      objectReference: {fileID: 1733857529}
     - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
       propertyPath: scoreManager
       value: 
@@ -4853,18 +4833,6 @@ PrefabInstance:
       propertyPath: trackMovement
       value: 
       objectReference: {fileID: 602786685}
-    - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
-      propertyPath: powerUpCounter
-      value: 
-      objectReference: {fileID: 2086278284}
-    - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
-      propertyPath: powerUpAudioSource
-      value: 
-      objectReference: {fileID: 1733857529}
-    - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
-      propertyPath: backgroundMusicAudioSource
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4405980676207911739, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
       propertyPath: m_Name
       value: Player Car

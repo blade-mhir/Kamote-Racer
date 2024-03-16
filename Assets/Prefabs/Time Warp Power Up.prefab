@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3759179352254135204}
   - component: {fileID: 3759179352254135203}
   - component: {fileID: 7194285119286177991}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Time Warp Power Up
   m_TagString: TimeWarpPowerUp
   m_Icon: {fileID: 0}

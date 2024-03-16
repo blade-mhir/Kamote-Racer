@@ -10,16 +10,16 @@ TagManager:
   - TimeWarpPowerUp
   - PowerUp
   - JetFighterPowerUp
-  - JetFighter
+  - ScoreMultiplyPowerUp
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Invincible
-  - 
+  - PowerUps
   - 
   - 
   - 

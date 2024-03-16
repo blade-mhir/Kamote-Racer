@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3096467904014091128}
   - component: {fileID: 5722429644641573718}
   - component: {fileID: 142815792439296560}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TurboBoostPowerUp
   m_TagString: TurboPowerUp
   m_Icon: {fileID: 0}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4405980676207911736}
   - component: {fileID: 4405980676207911737}
   - component: {fileID: 4405980676207911738}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player Car
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ MonoBehaviour:
   turboBoostDuration: 5
   turboBoostSpeedMultiplier: 2
   powerUpsNeededForHealth: 1
-  maxLives: 5
+  maxLives: 3
   powerUpsNeededForTimeWarp: 2
   timeWarpDuration: 5
   timeWarpSlowdownFactor: 0.5
@@ -192,8 +192,4 @@ MonoBehaviour:
   - {fileID: 142815792439296560, guid: 29c61fc3722d33d4f8220a356b3b3e46, type: 3}
   - {fileID: 3333907773908137259, guid: 365dfb13fe5e17141aa0f1407bc81cd2, type: 3}
   - {fileID: 3759179352254135203, guid: aa425afa3f3a23340ade39662ab8c276, type: 3}
-  - {fileID: 4714903553608970869, guid: dcbaf3ed474547d4bb8b0cfb81e577ea, type: 3}
-  jetFighterPowerUpsNeeded: 3
   scoreManager: {fileID: 0}
-  jetFighterPrefab: {fileID: 1131970379797220709, guid: f268215938942104392d0926acb23ee9, type: 3}
-  jetFighterYOffset: 0.6
