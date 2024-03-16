@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5226977962418938709
+--- !u!1 &8387680478606428774
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5226977962418938706}
-  - component: {fileID: 5226977962418938707}
-  - component: {fileID: 5226977962418938708}
-  - component: {fileID: 2266860123408295984}
-  m_Layer: 7
+  - component: {fileID: 8387680478606428769}
+  - component: {fileID: 8387680478606428768}
+  - component: {fileID: 8387680478606428775}
+  - component: {fileID: 2565771347677004035}
+  m_Layer: 0
   m_Name: Score Multiply Power Up
   m_TagString: ScoreMultiplyPowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5226977962418938706
+--- !u!4 &8387680478606428769
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5226977962418938709}
+  m_GameObject: {fileID: 8387680478606428774}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.39, y: -2.03, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
@@ -34,13 +34,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5226977962418938707
+--- !u!212 &8387680478606428768
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5226977962418938709}
+  m_GameObject: {fileID: 8387680478606428774}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -86,13 +86,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5226977962418938708
+--- !u!114 &8387680478606428775
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5226977962418938709}
+  m_GameObject: {fileID: 8387680478606428774}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecf4b4a67ae02349b4402690b543531, type: 3}
@@ -115,15 +115,15 @@ MonoBehaviour:
     endTime: 50
     speed: 15
   - startTime: 50
-    endTime: 1000
+    endTime: 10000
     speed: 17
---- !u!61 &2266860123408295984
+--- !u!61 &2565771347677004035
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5226977962418938709}
+  m_GameObject: {fileID: 8387680478606428774}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}

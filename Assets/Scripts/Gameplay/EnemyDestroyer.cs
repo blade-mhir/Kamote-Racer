@@ -26,5 +26,13 @@ public class EnemyDestroyer : MonoBehaviour
         {
             Destroy(collision.gameObject); // Destroy powerup
         }
+         else if (collision.gameObject.CompareTag("TimeWarpPowerUp")) 
+        {
+            Destroy(collision.gameObject); // Destroy powerup
+        }
+        else if (collision.gameObject.CompareTag("ScoreMultiplyPowerUp")) 
+        {
+            Destroy(collision.gameObject); // Destroy powerup
+        }
     }
 }

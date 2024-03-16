@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3333907773908137260}
   - component: {fileID: 3333907773908137259}
   - component: {fileID: -452577737277931953}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Health Power Up
   m_TagString: HealthPowerUp
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ MonoBehaviour:
     endTime: 50
     speed: 15
   - startTime: 50
-    endTime: 1000
+    endTime: 10000
     speed: 17
 --- !u!61 &-452577737277931953
 BoxCollider2D:

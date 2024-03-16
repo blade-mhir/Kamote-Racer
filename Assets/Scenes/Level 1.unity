@@ -653,7 +653,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Jet Fighter
+  m_text: 'Score Multiplier
 
     ACTIVATED!'
   m_isRightToLeft: 0
@@ -857,7 +857,7 @@ MonoBehaviour:
     endTime: 50
     speed: 0.9
   - startTime: 50
-    endTime: 1000
+    endTime: 10000
     speed: 1
 --- !u!64 &602786686
 MeshCollider:
@@ -1096,7 +1096,7 @@ GameObject:
   - component: {fileID: 665684797}
   - component: {fileID: 665684796}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Main Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1833,8 +1833,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -436}
-  m_SizeDelta: {x: 300, y: 184.389}
+  m_AnchoredPosition: {x: -0.00023651, y: -438}
+  m_SizeDelta: {x: 570.742, y: 184.389}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &993423565
 MonoBehaviour:
@@ -2471,11 +2471,13 @@ MonoBehaviour:
   - {fileID: 4171510031441796264, guid: 6c10f0b5ac2e7464abff668233dd7636, type: 3}
   powerUpPrefabs:
   - prefab: {fileID: 1761304643532203140, guid: 29c61fc3722d33d4f8220a356b3b3e46, type: 3}
-    spawnChance: 1
+    spawnChance: 0.1
   - prefab: {fileID: 3333907773908137258, guid: 365dfb13fe5e17141aa0f1407bc81cd2, type: 3}
-    spawnChance: 0
+    spawnChance: 0.1
   - prefab: {fileID: 3759179352254135202, guid: aa425afa3f3a23340ade39662ab8c276, type: 3}
-    spawnChance: 0
+    spawnChance: 0.1
+  - prefab: {fileID: 8387680478606428774, guid: f92f6f5a039675a4aab45517ee3ffd7f, type: 3}
+    spawnChance: 0.1
   lanePositions:
   - -4.9
   - -4.07
@@ -2489,7 +2491,7 @@ MonoBehaviour:
   - 3.26
   - 4.112
   - 4.95
-  delayTimer: 0.5
+  delayTimer: 0.3
 --- !u!4 &1203771738
 Transform:
   m_ObjectHideFlags: 0
@@ -3798,7 +3800,7 @@ GameObject:
   - component: {fileID: 1764961142}
   - component: {fileID: 1764961141}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Restart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4470,7 +4472,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 12
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -4736,8 +4738,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turboCounterText: {fileID: 1785532179}
   timeWarpCounterText: {fileID: 752042960}
+  scoreMultiplierCounterText: {fileID: 1648469232}
   turboActivatedText: {fileID: 1024527091}
   timeWarpActivatedText: {fileID: 1548390364}
+  scoreMultiplierActivatedText: {fileID: 370259533}
 --- !u!1 &2146754771
 GameObject:
   m_ObjectHideFlags: 0
@@ -4821,10 +4825,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4405980676207911736, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405980676207911736, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
+      propertyPath: maxLives
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 2086278279}
+    - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
+      propertyPath: healthAudio
+      value: 
+      objectReference: {fileID: 1401108500}
     - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
       propertyPath: gameOverMenu
       value: 
       objectReference: {fileID: 2086278283}
+    - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
+      propertyPath: powerUpAudio
+      value: 
+      objectReference: {fileID: 1733857529}
     - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
       propertyPath: scoreManager
       value: 
@@ -4833,6 +4861,34 @@ PrefabInstance:
       propertyPath: trackMovement
       value: 
       objectReference: {fileID: 602786685}
+    - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
+      propertyPath: powerUpCounter
+      value: 
+      objectReference: {fileID: 2086278284}
+    - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
+      propertyPath: multiplierFactor
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
+      propertyPath: multiplierDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
+      propertyPath: powerUpAudioSource
+      value: 
+      objectReference: {fileID: 1733857529}
+    - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
+      propertyPath: backgroundMusicAudioSource
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
+      propertyPath: powerUpMovements.Array.data[3]
+      value: 
+      objectReference: {fileID: 8387680478606428775, guid: f92f6f5a039675a4aab45517ee3ffd7f, type: 3}
+    - target: {fileID: 4405980676207911738, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
+      propertyPath: speedIntervals.Array.data[0].endTime
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 4405980676207911739, guid: f77dcabea868ed043a31fbc5d7603747, type: 3}
       propertyPath: m_Name
       value: Player Car

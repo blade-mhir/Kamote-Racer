@@ -115,7 +115,7 @@ MonoBehaviour:
     endTime: 50
     speed: 15
   - startTime: 50
-    endTime: 1000
+    endTime: 10000
     speed: 17
 --- !u!61 &2168435676986983259
 BoxCollider2D:

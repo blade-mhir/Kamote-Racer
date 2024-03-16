@@ -54,7 +54,7 @@ public class PauseMenu : MonoBehaviour
     public void LoadMainMenu()
     {
         Time.timeScale = 1f; // Ensure time isn't frozen when going to menu
-        SceneManager.LoadScene("Title Screen"); // Replace "MainMenu" with your main menu scene's name
+        SceneManager.LoadScene("TitleScreen"); // Replace "MainMenu" with your main menu scene's name
     }
 
     public void QuitGame()

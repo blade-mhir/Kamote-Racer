@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4405980676207911736}
   - component: {fileID: 4405980676207911737}
   - component: {fileID: 4405980676207911738}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Player Car
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -162,10 +162,13 @@ MonoBehaviour:
   turboBoostDuration: 5
   turboBoostSpeedMultiplier: 2
   powerUpsNeededForHealth: 1
-  maxLives: 3
+  maxLives: 5
   powerUpsNeededForTimeWarp: 2
   timeWarpDuration: 5
   timeWarpSlowdownFactor: 0.5
+  multiplierDuration: 5
+  multiplierFactor: 2
+  powerUpsNeededForMultiplier: 3
   trackMovement: {fileID: 0}
   enemyMovements:
   - {fileID: 2469352859314710144, guid: 9e1777bf88992ba4ca5ce9312b28024f, type: 3}
@@ -192,4 +195,8 @@ MonoBehaviour:
   - {fileID: 142815792439296560, guid: 29c61fc3722d33d4f8220a356b3b3e46, type: 3}
   - {fileID: 3333907773908137259, guid: 365dfb13fe5e17141aa0f1407bc81cd2, type: 3}
   - {fileID: 3759179352254135203, guid: aa425afa3f3a23340ade39662ab8c276, type: 3}
+  - {fileID: 4714903553608970869, guid: dcbaf3ed474547d4bb8b0cfb81e577ea, type: 3}
   scoreManager: {fileID: 0}
+  powerUpCounter: {fileID: 0}
+  powerUpAudio: {fileID: 0}
+  healthAudio: {fileID: 0}

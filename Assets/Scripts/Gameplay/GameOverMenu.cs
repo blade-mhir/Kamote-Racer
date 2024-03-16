@@ -67,7 +67,7 @@ public class GameOverMenu : MonoBehaviour
     public void LoadMainMenu()
     {
         Time.timeScale = 1f; 
-        SceneManager.LoadScene("Title Screen"); 
+        SceneManager.LoadScene("TitleScreen"); 
         GameManager.isGameOver = false;
     }
 }
